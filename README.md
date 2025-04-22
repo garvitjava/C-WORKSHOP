@@ -1,2 +1,2 @@
 # C-WORKSHOP
-### by Harjinder Singh -- the hacker 
+### by Harjinder Singh `The H4cker`
