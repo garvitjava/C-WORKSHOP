@@ -1,0 +1,138 @@
+Sure! Here's a detailed and well-structured Markdown (`.md`) version of your content on **Exception Handling in C++**:
+
+---
+
+# Exception Handling in C++
+
+**Last Updated: 14 Apr, 2025**
+
+In **C++**, *exceptions* are unexpected problems or errors that may occur during program execution. A common example is attempting to divide a number by zero, which can lead to undefined behavior.
+
+Exception handling allows developers to gracefully manage such situations and ensure the program continues executing or exits cleanly.
+
+---
+
+## 📌 What is Exception Handling?
+
+**Exception handling** is the process of responding to exceptional circumstances (like runtime errors) in a program. It helps maintain the program's stability and prevents crashes or incorrect results.
+
+---
+
+## 🔐 try-catch Block
+
+C++ provides built-in support for exception handling using `try` and `catch` blocks.
+
+### 🔧 Syntax
+
+```cpp
+try {
+    // Code that might throw an exception
+}
+catch (ExceptionType e) {
+    // Code to handle the exception
+}
+```
+
+- The code that might raise an exception is placed inside the **`try`** block.
+- The **`catch`** block catches and handles exceptions of a specific type.
+
+If an exception is thrown inside the `try` block, control is transferred to the first matching `catch` block.
+
+---
+
+## 🎯 Throwing Exceptions
+
+To raise an exception, use the `throw` keyword followed by a value or object representing the error.
+
+### 📌 Syntax
+
+```cpp
+try {
+    throw value;
+}
+catch (ExceptionType e) {
+    // Code to handle the exception
+}
+```
+
+When an exception is thrown:
+- The runtime looks for a `catch` block with a parameter type that matches the thrown exception.
+- If found, the catch block handles the exception.
+- If not, the program terminates.
+
+---
+
+## 🎭 Types of Exceptions
+
+You can throw the following types of values as exceptions in C++:
+
+1. **Built-in Types**  
+2. **Standard Exceptions**  
+3. **Custom Exceptions**  
+
+---
+
+## 🧱 Throwing Built-in Types
+
+Throwing simple built-in types like `int`, `char`, or `float` is easy but not very informative.
+
+### 📌 Example
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int x = 7;
+
+    try {
+        if (x % 2 != 0) {
+            // Throwing an integer
+            throw -1;
+        }
+    }
+    catch (int e) {
+        cout << "Exception Caught: " << e << endl;
+    }
+
+    return 0;
+}
+```
+
+### 🧾 Output
+
+```
+Exception Caught: -1
+```
+
+### ⚠️ Limitation
+
+- Using built-in types like `int` doesn’t provide meaningful context.
+- It behaves similarly to using `if-else` statements.
+- There’s no built-in hierarchy or rich detail.
+
+---
+
+## 🚀 Better Practice: Use Objects for Exceptions
+
+Instead of throwing primitive types, it's better to throw objects of classes (either standard or custom), which:
+- Provide detailed error information
+- Support inheritance
+- Allow polymorphic behavior
+
+We'll cover **Standard Exceptions** and **Custom Exceptions** in detail in future sections.
+
+---
+
+## ✅ Summary
+
+| Feature | Description |
+|--------|-------------|
+| `try` block | Code that may generate exceptions |
+| `catch` block | Code to handle exceptions |
+| `throw` | Keyword to throw an exception |
+| Exception Types | Built-in, Standard, Custom |
+| Recommended | Use objects for meaningful exceptions |
+
+---
+
